@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/cloud-builders/mvn'
+    args: ['install']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--tag=gcr.io/lively-arc-233016/beer-inventory-service:$COMMIT_SHA', '.']
+images: ['gcr.io/lively-arc-233016/beer-inventory-service:$COMMIT_SHA']
