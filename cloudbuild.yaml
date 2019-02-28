@@ -2,5 +2,5 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn:3.5.0-jdk-8'
     args: ['install']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/lively-arc-233016/beer-inventory-service:$COMMIT_SHA', './target']
-images: ['gcr.io/lively-arc-233016/beer-inventory-service:$COMMIT_SHA']
+    args: ['build', '--tag=gcr.io/lively-arc-233016/beer-inventory-service', './target']
+images: ['gcr.io/lively-arc-233016/beer-inventory-service']
