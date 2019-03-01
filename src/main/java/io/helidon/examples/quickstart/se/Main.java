@@ -98,6 +98,7 @@ public final class Main {
         MetricsSupport metrics = MetricsSupport.create();
         GreetService greetService = new GreetService(config);
         BeerService beerService = new BeerService();
+        ShutdownService shutdownService = new ShutdownService();
         HealthSupport health = HealthSupport.builder()
                 .add(HealthChecks.healthChecks())   // Adds a convenient set of checks
                 .build();
@@ -108,6 +109,7 @@ public final class Main {
                 .register(metrics)                  // Metrics at "/metrics"
                 .register("/greet", greetService)
                 .register("/beers", beerService)
+                .register("/shutdown", shutdownService)
                 .build();
     }
 
